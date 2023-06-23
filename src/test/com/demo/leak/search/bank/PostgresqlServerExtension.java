@@ -37,6 +37,7 @@ public final class PostgresqlServerExtension implements BeforeAllCallback, After
                     .withFileFromFile("Dockerfile", new File("docker/db.dockerfile"))
                     .withFileFromFile("CreateDB.sql", new File("CreateDB.sql")))
             .withEnv("POSTGRES_PASSWORD", "test1234")
+            .withEnv("leakSearchAuthKey", "yoshaib5hohNgiehae6chiJ5saoTho")
             .withExposedPorts(5432);
 
     private HikariDataSource dataSource;
