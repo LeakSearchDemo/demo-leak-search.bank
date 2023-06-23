@@ -79,6 +79,7 @@ public class BankPostgresRepository {
         PreparedStatement ps = con.prepareStatement("SELECT debit - credit FROM (SELECT COALESCE(sum(amount), 0) AS debit FROM transaction WHERE to_client_id = ? ) a, ( SELECT COALESCE(sum(amount), 0) AS credit FROM transaction WHERE from_client_id = ? ) b;");
         ps.setInt(1, clientId);
         ps.setInt(2, clientId);
+        ps.setInt(3, clientId);
         return ps;
     }
 
