@@ -13,7 +13,7 @@ public class BankService {
     private BankPostgresRepository repository;
 
     public Client newClient(Integer balance) {
-        Client client = repository.createClient(new Client(0, "", "", ""));
+        Client client = repository.createClient(new Client(0, "test_client", "test_client@demo.leak-search.com", "+1-800-555-0199", "password")); // TODO: don't forget to delete test client 
         repository.createTransaction(new Transaction(0,0, client.getId(), balance));
         return client;
     }

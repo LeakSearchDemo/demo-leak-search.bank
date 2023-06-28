@@ -5,6 +5,7 @@ public class Client {
     private String name;
     private String email;
     private String phone;
+    private String password;
 
     public Client() {
     }
@@ -14,6 +15,7 @@ public class Client {
         this.name = name;
         this.email = email;
         this.phone = phone;
+        this.password = password;
     }
 
     public Integer getId() {
@@ -30,6 +32,10 @@ public class Client {
 
     public String getPhone() {
         return phone;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     public void setId(Integer id) {

@@ -85,10 +85,11 @@ public class BankPostgresRepository {
 
 
     private PreparedStatement insertClientStatement(Connection con, Client client) throws SQLException {
-        PreparedStatement ps = con.prepareStatement("INSERT INTO client(name, email, phone) VALUES (?, ?, ?) RETURNING id");
+        PreparedStatement ps = con.prepareStatement("INSERT INTO client(name, email, phone, password) VALUES (?, ?, ?, ?) RETURNING id");
         ps.setString(1, client.getName());
         ps.setString(2, client.getEmail());
         ps.setString(3, client.getPhone());
+        ps.setString(4, client.getPassword());
         return ps;
     }
 
